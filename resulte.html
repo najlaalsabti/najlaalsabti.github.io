@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js" type="text/javascript"></script>
+
+	</head>
+	<body class="is-preload">
+		<!-- <script src="sketch_image.js" ></script> -->
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="fine" class="intr" style="position:fixed; left:28%; top:20%; display:none;" >
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;">You are Fine!</h2>
+						<h3 style="color:#ffffff; font-style: italic;">We couldn’t detect signs for any serious problem.<br>
+							However please call your doctor if you don’t feel good.</h3>
+					</center>
+					</div>
+
+					<div id="stroke" class="intr" style="position:fixed; left:26%; top:18%; display:none;" >
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;"><u>This seems like a stroke.<br>if the patient also had any of:</u></h2>
+						</center>
+						<h3 style="color:#ffffff; font-style: italic;">
+							<ul>
+								<li>No balance</li>
+								<li>Trouble seeing</li>
+								<li>Trouble raising both arms</li>
+							</ul>
+						</h3>
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;"><u>Do the following:</u></h2>
+					  </center>
+						<h3 style="color:#ffffff; font-style: italic;">
+							<ul>
+								<li>Call 911 immediately</li>
+								<li>Note the time you first see symptoms</li>
+								<li>Perform CPR, if necessary</li>
+								<li>Do not let that person go to sleep or talk you out of calling 911</li>
+								<li>Do not give them medication, food, or drinks</li>
+								<li>Do not drive yourself or someone else to the emergency room</li>
+							</ul>
+						</h3>
+
+					</div>
+
+					<div id="seizure" class="intr" style="position:fixed; left:31%; top:18%; display:none;" >
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;"><u>This seems like a seizure.<br>if the patient also had any of:</u></h2>
+						</center>
+						<h3 style="color:#ffffff; font-style: italic;">
+							<ul>
+								<li>Sudden falls </li>
+								<li>Confusion</li>
+								<li>Loss of consciousness</li>
+								<li>Uncontrollable jerking movements/li>
+								<li>Strange nations and emotions</li>
+							</ul>
+						</h3>
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;"><u>Do the following:</u></h2>
+					  </center>
+						<h3 style="color:#ffffff; font-style: italic;">
+							<ul>
+								<li>Do not panic</li>
+								<li>Turn patient on side and start timing the seizure</li>
+								<li>Stay with patient, do no restrain</li>
+								<li>Place something soft under the head</li>
+								<li>Do NOT put anything in mouth</li>
+								<li>Call 911 if seizure lasts more than 5 minutes</li>
+							</ul>
+						</h3>
+					</div>
+
+					<div id="internalbleeding" class="intr" style="position:fixed; left:26%; top:13%; display:none;" >
+							<center>
+							<h2 style="color:#ffffff; font-style: italic;"><u>This seems like an internal bleeding.<br>if the patient also had any of:</u></h2>
+							</center>
+							<h3 style="color:#ffffff; font-style: italic;">
+								<ul>
+									<li>Weakness </li>
+									<li>Vision changes</li>
+									<li>Shortness of breath</li>
+									<li>headachc</li>
+									<li>Chest, shoulder, neck, back, or abdominal pain</li>
+									<li>Tingling hands or feet</li>
+									<li>Nausear vomiting</li>
+								</ul>
+							</h3>
+							<center>
+							<h2 style="color:#ffffff; font-style: italic;"><u>Do the following:</u></h2>
+						  </center>
+							<h3 style="color:#ffffff; font-style: italic;">
+								<ul>
+									<li>Check if patient is conscious</li>
+									<li>Lie the patient down</li>
+									<li>Cover them with something to keep them warm</li>
+									<li>Raise the patient’s legs above the level of their heart</li>
+									<li>Don’t give the patient anything to eat or drink</li>
+									<li>Manage any other injuries</li>
+									<li>If the patient becomes unconscious, place them on their side</li>
+									<li>Check breathing frequently</li>
+									<li>Begin (CPR) if necessary</li>
+								</ul>
+							</h3>
+					</div>
+
+					<div id="sick" class="intr" style="position:fixed; left:30%; top:20%; display:none;" >
+						<center>
+						<h2 style="color:#ffffff; font-style: italic;">Call 911</h2>
+						<h3 style="color:#ffffff; font-style: italic;">We have detected signs of some serious problems.
+							<br>Please call 911!</h3>
+					</center>
+					</div>
+
+					<!-- <div id="intr" style="position:fixed; left:47.5%; top:82%;" >
+						  <ul class="actions">
+								<li><a href="stot.html" class="button icon solid solo fa-arrow-down scrolly icon" style="color:white;">Continue</a></li>
+							</ul>
+					</div> -->
+
+     <!-- <div id="intro">
+			 Hello
+			 <img src="overlay.png">
+		 </div> -->
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://code.responsivevoice.org/responsivevoice.js?key=w5ddl1wX"></script> <!-- replace with KEY-->
+			<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script>
+
+			if(localStorage.getItem("x")=="true" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="false"){
+				 document.getElementById("fine").style.display="none";
+			   document.getElementById("stroke").style.display="inline";
+				 document.getElementById("seizure").style.display="none";
+				 document.getElementById("internalbleeding").style.display="none";
+        responsiveVoice.speak("THIS SEEMS LIKE A stroke. If the patient also had any of: No balance. Trouble seeing. Trouble raising both arms Do the following: Call 911 immediately. Note the time you first see symptoms. Perform CPR, if necessary. Do not let that person go to sleep or talk you out of calling 911. Do not give them medication, food, or drinks. Do not drive yourself or someone else to the emergency room");
+			}
+			else if (localStorage.getItem("x")=="false" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="true") {
+				document.getElementById("fine").style.display="none";
+				document.getElementById("stroke").style.display="none";
+				document.getElementById("seizure").style.display="inline";
+				document.getElementById("internalbleeding").style.display="none";
+				document.getElementById("sick").style.display="none";
+				responsiveVoice.speak("THIS SEEMS LIKE A seizure. If the patient also had any of:  Sudden falls. Confusion. Loss of consciousness. Uncontrollable jerking movements. Strange nations and emotions. Do the following:  Do not panic. Turn patient on side and start timing the seizure. Stay with patient, do no restrain. Place something soft under the head. Do NOT put anything in mouth ");
+			}
+			else if (localStorage.getItem("x")=="false" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="false") {
+				document.getElementById("fine").style.display="none";
+				document.getElementById("stroke").style.display="none";
+				document.getElementById("seizure").style.display="none";
+				document.getElementById("internalbleeding").style.display="inline";
+				document.getElementById("sick").style.display="none";
+				responsiveVoice.speak("THIS SEEMS LIKE AN INTERNAL BLEEDING. If the patient also had any of. Weakness. Vision changes. Shortness of breath. headachc. Chest, shoulder, neck, back, or abdominal pain. Tingling hands or feet. Nausear vomiting. Do the following: Check if patient is conscious. Lie the patient down. Cover them with something to keep them warm. Raise the patient’s legs above the level of their heart. Don’t give the patient anything to eat or drink. Manage any other injuries. If the patient becomes unconscious, place them on their side Check breathing frequently .Begin (CPR) if necessary");
+			}
+			else if (localStorage.getItem("x")=="true" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="true") {
+        document.getElementById("sick").style.display="inline";
+				document.getElementById("fine").style.display="none";
+				document.getElementById("stroke").style.display="none";
+				document.getElementById("seizure").style.display="none";
+				document.getElementById("internalbleeding").style.display="none";
+				responsiveVoice.speak("you are fine. We couldn’t detect signs for any serious problem. However please call your doctor if you don’t feel good.");
+			}
+			else{
+				document.getElementById("fine").style.display="inline";
+				document.getElementById("stroke").style.display="none";
+				document.getElementById("seizure").style.display="none";
+				document.getElementById("internalbleeding").style.display="none";
+				document.getElementById("sick").style.display="none";
+				responsiveVoice.speak("Call 911. We have detected signs of some serious problems. Please call 911");
+
+			}
+			</script>
+
+	</body>
+</html>
