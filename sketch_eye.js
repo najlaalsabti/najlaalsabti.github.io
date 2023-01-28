@@ -69,7 +69,7 @@ function gotResult(error, results) {
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;
-  if(results[0].label=="Rolling"){
+  if(results[0].label=="RollingEyes"){
     localStorage.setItem("z", "true");
     console.log("resultes");
     console.log(localStorage.getItem("z"));
