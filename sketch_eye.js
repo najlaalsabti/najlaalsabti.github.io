@@ -29,7 +29,7 @@ function preload() {
 }
 
 function setup() {
-  var cnv = createCanvas(520, 400);
+  var cnv = createCanvas(300, 250);
   cnv.center();
   // Create the video
   video = createCapture(VIDEO);
