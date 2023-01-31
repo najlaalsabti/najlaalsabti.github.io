@@ -153,7 +153,7 @@
 			   document.getElementById("stroke").style.display="inline";
 				 document.getElementById("seizure").style.display="none";
 				 document.getElementById("internalbleeding").style.display="none";
-        responsiveVoice.speak("THIS SEEMS LIKE A stroke. If the patient also had any of: No balance. Trouble seeing. Trouble raising both arms Do the following: Call 911 immediately. Note the time you first see symptoms. Perform CPR, if necessary. Do not let that person go to sleep or talk you out of calling 911. Do not give them medication, food, or drinks. Do not drive yourself or someone else to the emergency room");
+        responsiveVoice.speak("THIS SEEMS LIKE A stroke. If the patient also had any of: No balance. Trouble seeing. Trouble raising both arms Do the following: Call 911 immediately. Note the time you first see symptoms. Perform CPR, if necessary. Do not let that person go to sleep or talk you out of calling 911. Do not give them medication, food, or drinks. Do not drive to the emergency room");
 			}
 			else if (localStorage.getItem("x")=="false" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="true") {
 				document.getElementById("fine").style.display="none";
@@ -161,7 +161,7 @@
 				document.getElementById("seizure").style.display="inline";
 				document.getElementById("internalbleeding").style.display="none";
 				document.getElementById("sick").style.display="none";
-				responsiveVoice.speak("THIS SEEMS LIKE A seizure. If the patient also had any of:  Sudden falls. Confusion. Loss of consciousness. Uncontrollable jerking movements. Strange nations and emotions. Do the following:  Do not panic. Turn patient on side and start timing the seizure. Stay with patient, do no restrain. Place something soft under the head. Do NOT put anything in mouth ");
+				responsiveVoice.speak("THIS SEEMS LIKE A seizure. If the patient also had any of:  Sudden falls. Confusion. Loss of consciousness. Uncontrollable jerking movements. Strange nations and emotions. Do the following: Turn patient on side and start timing the seizure. Stay with patient, do no restrain. Place something soft under the head. Do NOT put anything in mouth. Call 911 if seizure lasts more than 5 minutes ");
 			}
 			else if (localStorage.getItem("x")=="false" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="false") {
 				document.getElementById("fine").style.display="none";
@@ -169,7 +169,7 @@
 				document.getElementById("seizure").style.display="none";
 				document.getElementById("internalbleeding").style.display="inline";
 				document.getElementById("sick").style.display="none";
-				responsiveVoice.speak("THIS SEEMS LIKE AN INTERNAL BLEEDING. If the patient also had any of. Weakness. Vision changes. Shortness of breath. headachc. Chest, shoulder, neck, back, or abdominal pain. Tingling hands or feet. Nausear vomiting. Do the following: Check if patient is conscious. Lie the patient down. Cover them with something to keep them warm. Raise the patient’s legs above the level of their heart. Don’t give the patient anything to eat or drink. Manage any other injuries. If the patient becomes unconscious, place them on their side Check breathing frequently .Begin (CPR) if necessary");
+				responsiveVoice.speak("THIS SEEMS LIKE AN INTERNAL BLEEDING. If the patient also had any of. Weakness. Vision changes. Shortness of breath. Chest or abdominal pain. Tingling hands or feet. Do the following:  Lie the patient down. Cover them to keep them warm. Raise the patient’s legs above their heart. Don’t give them anything to eat or drink. If the patient becomes unconscious, place them on their side. Begin (CPR) if necessary");
 			}
 			else if (localStorage.getItem("x")=="true" && localStorage.getItem("y")=="true" && localStorage.getItem("z")=="true") {
         document.getElementById("sick").style.display="inline";
