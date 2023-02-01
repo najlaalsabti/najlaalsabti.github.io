@@ -33,25 +33,29 @@
 					</div>
 					</a>
 					<!-- Intro -->
-						<div class="intr" style="position:fixed; left:40%; top:22%;" >
+						<div class="intr" style="position:fixed; left:40%; top:25%;" >
 							<center>
-							<b> <p style="font-style: italic; color:#7e7e7e; text-align: center;">Now please Say:<br> I am fine and I can pronounce correctly</p></b>
+							<h4 style="font-style: italic; color:#7e7e7e; text-align: center;">Say:<br>speaking is not a problem for me</h4>
 						</center>
 						</div>
 
         	<div class="intr" style="position:fixed; left:40%; top:35%;" >
-						<div class="p-3" style="border: 1px solid gray; width:300px; height: 250px; border-radius: 8px;">
+						<div class="p-3" style="border: 1px solid gray; width:300px; height:100px; border-radius: 8px; padding-left: 10px; padding-top: 5px;">
 							<span id="final" ></span>
 							<span id="interim" class="text-secondary"></span>
 						</div>
-						<div class="mt-4">
-				      <button class="btn" id="repeat">Repeat</button>
-				      <p id="status" class="lead mt-3 " style=" display: none; color:white;">Listenting ...</p>
-				    </div>
 					</div>
+
+					<div class="intr" style="position:fixed; left:40%; top:48%;" >
+						<div class="mt-4">
+				      <button  id="repeat" style="padding-right: 20%; padding-left: 20%; border-radius: 8px; border: 1px solid gray; box-shadow: inset 0 0 0 0  !important" onclick="repeatFunc()">Repeat</button>
+				    </div>
+						<center><p id="status" class="lead mt-3 " style=" display: none; color:gray;">Listenting ...</p></center>
+					</div>
+
 						<div class="intr" style="position:fixed; left:48%; top:70%;" >
 							  <ul class="actions">
-									<li><a href="eye.html" class="button icon solid solo fa-arrow-down scrolly icon" style="color:#7e7e7e;">Continue</a></li>
+									<li><a href="eye.html" class="button icon solid solo fa-arrow-down scrolly icon" style="color:#7e7e7e;"></a></li>
 								</ul>
 						</div>
 
@@ -69,10 +73,6 @@
 				<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 				<script>
-				window.onload = async () => {
-						responsiveVoice.speak("To start diagnosing, please smile and look at the camera");
-             setTimeout(tenSecRecognition, 5000);
-				};
 				console.log(localStorage.getItem("x"));
 				if ("webkitSpeechRecognition" in window) {
 			// Initialize webkitSpeechRecognition
@@ -125,20 +125,36 @@
 
 				// Set the Final transcript and Interim transcript.
 				document.querySelector("#final").innerHTML = final_transcript;
+				// document.querySelector("#final").style.padding = 10;
+				// document.querySelector("#interim").style.padding = 10;
 				document.querySelector("#interim").innerHTML = interim_transcript;
 			};
 
 
-			// Set the onClick property of the repeat button
-			document.querySelector("#repeat").onclick = () => {
+
+
+
+			function repeatFunc() {
 				// Repeat the Speech Recognition
-				document.querySelector("#final").innerHTML = ""
-				document.querySelector("#pronounciationResult").innerHTML = ""
-				final_transcript = ""
+				console.log("repeatFunc() is called ##############################");
+				document.querySelector("#final").innerHTML = "";
+				document.querySelector("#interim").innerHTML = "";
+				final_transcript = "";
 				tenSecRecognition();
 				// speechRecognition.start();
+			}
 
-			};
+			// // Set the onClick property of the repeat button
+			// document.querySelector("#repeat").onclick = async() => {
+			// 		console.console.log("repeatFunc() is called ##############################");
+			// 	// Repeat the Speech Recognition
+			// 	document.querySelector("#final").innerHTML = ""
+			// 	document.querySelector("#pronounciationResult").innerHTML = ""
+			// 	final_transcript = ""
+			// 	tenSecRecognition();
+			// 	// speechRecognition.start();
+			//
+			// };
 
 
 
@@ -146,7 +162,7 @@
 				// Start the Speech Recognition
 				// setInterval(responsiveVoice.speak("Please Say, I am fine and I can pronounce correctly"));
 				// setTimeout(responsiveVoice.speak("Please Say, I am fine and I can pronounce correctly"), 10000);
-				responsiveVoice.speak("Now, please Say, I am fine and I can pronounce correctly");
+				responsiveVoice.speak("Now, please Say, speaking is not a problem for me");
 				 // clearInterval();
 				 setTimeout(tenSecRecognition, 5000);
 
@@ -161,7 +177,7 @@
 			};
 
 			result = () =>{
-				if(final_transcript == "i am fine and i can pronounce correctly"){
+				if(final_transcript == "speaking is not a problem for me"){
 
 						localStorage.setItem("y", "false");
 						console.log(localStorage.getItem("y"));
